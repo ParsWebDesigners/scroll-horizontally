@@ -19,20 +19,52 @@
   -ms-overflow-style: none;
             }
         </style>
+        <script>
+            function goright(){
+                var element= document.getElementById("arrow");
+                var y= document.getElementById('over');
+                var x= document.getElementById('right');    
+                element.classList.remove("d-none");
+                y.scrollLeft+=500;
+                if(y.offsetWidth + y.scrollLeft == y.scrollWidth){
+                    x.classList.add('d-none');
+                }
+                
+            }
+            function go(){
+                var element= document.getElementById("arrow");
+                var y= document.getElementById('over');
+                var x= document.getElementById('right');
+                y.scrollLeft-=500;
+                if(y.scrollLeft == 0){
+                    element.classList.add('d-none');
+                    x.classList.remove('d-none');
+                }
+                if(y.offsetWidth + y.scrollLeft < y.scrollWidth){
+                    x.classList.remove('d-none');
+                }
+            }   
+            
+        </script>
     </head>
     <body>
         <article class="container-fluid position-relative">
-            <section class="row flex-row flex-nowrap ex" style="overflow-x: scroll;">
-                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #e65100;height: 200px;">hello</section>
-                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #124e78;height: 200px;">hello</section>
-                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f0f0c9;height: 200px;">hello</section>
-                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f2bb05;height: 200px;">hello</section>
-                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #6e0e0a;height: 200px;">hello</section>
+            <section id="over" class="row flex-row flex-nowrap ex" style="overflow-x: scroll;">
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #e65100;height: 200px;">1</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #124e78;height: 200px;">2</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f0f0c9;height: 200px;">3</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f2bb05;height: 200px;">4</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #6e0e0a;height: 200px;">5</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #e65100;height: 200px;">6</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #124e78;height: 200px;">7</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f0f0c9;height: 200px;">8</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #f2bb05;height: 200px;">9</section>
+                <section class="col-6 col-sm-5 col-md-4 col-lg-3 col-xl-2 m-2" style="display: inline-block;background-color: #6e0e0a;height: 200px;">10</section>
                 <section class="position-absolute top-50">
-                    <div style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute start-0 translate-middle-y">
+                    <div id="arrow" onclick="go()" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute start-0 translate-middle-y d-none">
                         <img src="./left.svg" alt="" width="50px">
                     </div>
-                    <div style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y">
+                    <div id="right" onclick="goright()" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y">
                         <img src="./right.svg" alt="" width="50px">
                     </div>
                 </section>
