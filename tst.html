@@ -10,14 +10,16 @@
             /* Hide scrollbar for Chrome, Safari and Opera */
             .ex::-webkit-scrollbar{
                 width: 0 !important;
-        display: none;}
-                    .ex{
-                        overflow: auto;
-        /* this will hide the scrollbar in mozilla based browsers */
-        overflow: -moz-scrollbars-none;
-        /* this will hide the scrollbar in internet explorers */
-        -ms-overflow-style: none;
-                    }
+                display: none;
+                }
+            .ex{
+                overflow: auto;
+                /* this will hide the scrollbar in mozilla based browsers */
+                overflow: -moz-scrollbars-none;
+                scrollbar-width:none;
+                /* this will hide the scrollbar in internet explorers */
+                -ms-overflow-style: none;
+            }
         </style>
         <script>
             function right(r){
