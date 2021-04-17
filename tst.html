@@ -30,6 +30,7 @@
                 p.scrollLeft+=500;
                 if(p.offsetWidth + p.scrollLeft == p.scrollWidth){
                     r.classList.add('d-none');
+                    r.classList.remove('d-sm-block');
                 }
                 
             }
@@ -39,98 +40,84 @@
                 p.scrollLeft-=500;
                 if(p.scrollLeft == 0){
                     l.classList.add('d-none');
-                    r.classList.remove('d-none');
+                    r.classList.add('d-sm-block');
                 }
                 if(p.offsetWidth + p.scrollLeft < p.scrollWidth){
-                    r.classList.remove('d-none');
+                    r.classList.add('d-sm-block');
                 }
             }   
+
+            function scrolled(thise){
+
+                var e=thise.children[5];
+                var left=e.children[0];
+                var right=e.children[1];
+
+                if (thise.scrollLeft !=0) {
+                    left.classList.add('d-sm-block');        
+                }else{
+                    left.classList.remove('d-sm-block');
+                }  
+                if(thise.offsetWidth + thise.scrollLeft == thise.scrollWidth){
+                    right.classList.remove('d-sm-block');
+                }else{
+                    right.classList.add('d-sm-block');
+                }
+
+            }
             
         </script>
     </head>
     <body style="background-color: #eee;">
         <br>
+
         <div style="padding:1%;border-bottom: 1px solid #d2d2d2;border-top: 1px solid #d2d2d2;background-color: #fff;">
             <span style="float:left;">recommended movies</span>
             <span style="float: right;">help</span>
             <div style="clear: both;"></div>
         </div>
+
         <article style="border-bottom: 1px solid #d2d2d2;background-color: #fff;" class="container-fluid position-relative">
-        <section class="row flex-row flex-nowrap ex" style="overflow-x: scroll;">
+
+            <section class="row flex-row flex-nowrap ex" style="overflow-x: scroll;" onscroll="scrolled(this)">
                 <section class="row col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2 p-0" >
                      <div style="display: inline-block;background-color: #e65100;height: 200px;"></div>
                      <div class="row">
                          <h3>hello</h3>
                          <div class="col mb-1">kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty</div>
                      </div>                                    
-                </section>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                </section>            
                 
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #124e78;height: 200px;">2</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #f0f0c9;height: 200px;">3</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #f2bb05;height: 200px;">4</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #6e0e0a;height: 200px;">5</section>
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
                 <section class="position-absolute top-50">
                     <div onclick="left(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute start-0 translate-middle-y d-none">
                         <img src="./left.svg" alt="" width="50px">
                     </div>
-                    <div onclick="right(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y">
+                    <div onclick="right(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y d-sm-block d-none">
                         <img src="./right.svg" alt="" width="50px">
                     </div>
                 </section>
                 
-
-
-
-                
-                              
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
         </article>
-        <br>
+
+
+        <br><!---->
+
+
         <div style="padding:1%;border-bottom: 1px solid #d2d2d2;border-top: 1px solid #d2d2d2;background-color: #fff;">
             <span style="float:left;">recommended movies</span>
             <span style="float: right;">help</span>
             <div style="clear: both;"></div>
         </div>
+
         <article style="border-bottom: 1px solid #d2d2d2;background-color: #fff;" class="container-fluid position-relative">
-        <section class="row flex-row flex-nowrap ex" style="overflow-x: scroll;">
+            <section class="row flex-row flex-nowrap ex" style="overflow-x: scroll;" onscroll="scrolled(this)">
+                
                 <section class="row col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2 p-0" >
                      <div style="display: inline-block;background-color: #e65100;height: 200px;"></div>
                      <div class="row">
@@ -138,63 +125,21 @@
                          <div class="col mb-1">kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty, kitty</div>
                      </div>                                    
                 </section>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #124e78;height: 200px;">2</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #f0f0c9;height: 200px;">3</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #f2bb05;height: 200px;">4</section>
                 <section class="col-7 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-2" style="display: inline-block;background-color: #6e0e0a;height: 200px;">5</section>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
+                                
                 <section class="position-absolute top-50">
                     <div onclick="left(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute start-0 translate-middle-y d-none">
                         <img src="./left.svg" alt="" width="50px">
                     </div>
-                    <div onclick="right(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y">
+                    <div onclick="right(this)" style="border-radius: 100%;background-color: #f2bb05;" class="position-absolute end-0 translate-middle-y d-sm-block d-none">
                         <img src="./right.svg" alt="" width="50px">
                     </div>
                 </section>
                 
-
-
-
-                
-                              
-
-
-
-
-
-
-
-
-
-
-
-
             </section>
         </article>
     </body>
